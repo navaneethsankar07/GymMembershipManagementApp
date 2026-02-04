@@ -1,114 +1,94 @@
-🏋️ Gym Management System
-📌 Overview
+# 🏋️ Gym Management System
 
-This Gym Management System is a web-based application designed to simplify and digitize the operations of fitness centers. The platform focuses on providing a smooth interaction between gym owners and members by handling memberships, payments, and gym data in a structured and secure way. It aims to reduce manual work, improve transparency, and enhance the overall user experience for both administrators and users.
+## 📌 Overview
 
-The system is built with scalability and maintainability in mind, making it suitable for single-gym setups as well as multi-gym environments.
+**Gym Management System** is a web-based application designed to simplify and digitize the operations of fitness centers. The platform focuses on creating a smooth interaction between gym owners and members by managing **gyms, memberships, and payments** in a structured and secure way.
 
-🎯 Objectives
+The system reduces manual work, improves transparency, and provides a reliable experience for both administrators and users.
 
-Simplify gym administration and member management
+---
 
-Enable secure and trackable membership payments
+## 🎯 Objectives
 
-Provide role-based access for owners and members
+- **Simplify** gym administration and member management  
+- Enable **secure and trackable** membership payments  
+- Provide **role-based access control**  
+- Maintain accurate **membership and payment records**  
+- Offer a clean and scalable **REST API**
 
-Maintain accurate membership and payment records
+---
 
-Offer a clean and user-friendly API for future expansion
+## 👥 User Roles
 
-👥 User Roles
-Gym Owner
+### 🧑‍💼 Gym Owner
+- Register and log in securely  
+- Add and manage gyms  
+- View members across owned gyms  
+- Track payment history and payment status  
+- Monitor membership activity  
 
-Register and log in securely
+### 🧑‍🤝‍🧑 Member (User)
+- Register and log in securely  
+- Browse available gyms  
+- Purchase or renew memberships  
+- View membership status and validity  
+- Track personal payment history  
 
-Add and manage gyms
+---
 
-View enrolled members across owned gyms
+## 🔑 Key Features
 
-Track payment history and payment status
+### 🔐 Authentication & Authorization
+- JWT-based authentication (Access & Refresh tokens)  
+- Role-based access control (Owner / User)  
+- Secure signup and login workflows  
 
-Monitor membership activity
+### 🏢 Gym Management
+- Create and manage gym profiles  
+- Associate gyms with specific owners  
+- Public listing of available gyms  
 
-Member (User)
+### 📅 Membership Management
+- Membership activation and renewal  
+- Automatic validity extension after payment  
+- Active / inactive membership tracking  
 
-Register and log in securely
+### 💳 Payment Management
+- Secure payment recording  
+- Payment status tracking  
+- Owner-level and user-level payment history  
+- Pagination support for large datasets  
 
-Browse available gyms
+### 🔗 API Design
+- RESTful API architecture  
+- Consistent request and response formats  
+- Pagination for listing endpoints  
+- Centralized configuration using constants  
 
-Purchase or renew gym memberships
+---
 
-View membership status and validity
+## 🧱 Tech Stack
 
-Track personal payment history
+### Backend
+- **Python**
+- **Django**
+- **Django REST Framework**
+- **Simple JWT**
 
-🔑 Key Features
-Authentication & Authorization
+### Database
+- **PostgreSQL** (Production)
+- **SQLite** (Development)
 
-JWT-based authentication using access and refresh tokens
+### Authentication
+- **JSON Web Tokens (JWT)**
+- **Role-based permissions**
 
-Role-based access control (Owner / User)
+---
 
-Secure login and signup workflows
+## 📁 Project Structure
 
-Gym Management
+```
 
-Create and manage gym profiles
-
-Associate gyms with specific owners
-
-Public listing of available gyms
-
-Membership Management
-
-Membership activation and renewal
-
-Automatic membership validity extension on payment
-
-Membership status tracking (active / inactive)
-
-Payment Management
-
-Secure payment recording
-
-Payment status tracking
-
-Owner-level and user-level payment history
-
-Pagination support for large datasets
-
-API Design
-
-RESTful API structure
-
-Consistent response formats
-
-Pagination for listing endpoints
-
-Centralized configuration using constants
-
-🧱 Tech Stack
-Backend
-
-Python
-
-Django
-
-Django REST Framework
-
-Simple JWT (Authentication)
-
-Database
-
-PostgreSQL / SQLite (development)
-
-Authentication
-
-JSON Web Tokens (JWT)
-
-Role-based access control
-
-📁 Project Structure (High Level)
 gym-management-system/
 │
 ├── owners/
@@ -127,50 +107,65 @@ gym-management-system/
 ├── manage.py
 └── requirements.txt
 
-⚙️ Configuration
+```
 
-Static values such as roles, messages, field names, and membership duration are centralized in a configuration file to ensure consistency and easier maintenance.
+---
 
-Examples include:
+## ⚙️ Configuration
 
-User roles (owner, user)
+All static values such as **roles, messages, field names, and membership duration** are centralized in a configuration file for better consistency and maintainability.
 
-Membership duration
+This includes:
+- User roles  
+- Membership duration  
+- Payment status values  
+- Common response messages  
 
-Payment status values
+---
 
-Common response messages
+## 🔄 Membership Flow
 
-🔄 Membership Flow
+1. User registers and logs in  
+2. User selects a gym  
+3. Payment is recorded successfully  
+4. Membership is created or extended automatically  
+5. Membership remains active until expiry  
 
-User registers and logs in
+---
 
-User selects a gym
+## 📊 Pagination
 
-Payment is recorded successfully
+Pagination is implemented for:
+- Member listings (owner view)  
+- Payment history (owners and users)  
+- Gym listings  
 
-Membership is created or extended automatically
+This ensures better performance and scalable data handling.
 
-Membership remains active until the expiry date
+---
 
-📊 Pagination
+## 🔐 Security Considerations
 
-Pagination is implemented across listing endpoints such as:
+- Passwords are **securely hashed**  
+- JWT tokens handle authentication securely  
+- Role-based permissions restrict sensitive endpoints  
+- Owners can access only their own gym data  
 
-Members list (for owners)
+---
 
-Payment history (owners and users)
 
-Gym listings
+## ⚡ Setup Instructions
 
-This ensures optimal performance and better handling of large datasets.
+1. Clone the repository  
+2. Create and activate a virtual environment  
+3. Install dependencies using `requirements.txt`  
+4. Apply database migrations  
+5. Run the development server  
 
-🔐 Security Considerations
+---
 
-Passwords are securely hashed
+## 📄 License
 
-JWT tokens are used for session management
-
-Role-based permissions restrict sensitive endpoints
-
-Only gym owners can access owner-specific data
+This project is intended for **educational and demonstration purposes**.  
+Licensing can be added based on future usage requirements.
+```
